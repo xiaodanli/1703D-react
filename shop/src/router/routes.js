@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+import React from 'react'
 import Loadable from 'react-loadable'
 
 function Loading(){
@@ -88,7 +88,23 @@ export default [
         component:Registry
     },
     {
+        path:'/list/:id',
+        component:List
+    },
+    {
+        path:'/city',
+        component:City
+    },
+    {
+        path:'/detail/:id',
+        component:Detail
+    },
+    {
+        path:'/create',
+        component:Create
+    },
+    {
         path:'/',
-        redirect:'/registry'
+        redirect:'/city'
     }
 ]

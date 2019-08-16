@@ -2,7 +2,7 @@
  * @Author: 李晓丹 
  * @Date: 2019-08-14 14:36:14 
  * @Last Modified by: 李晓丹
- * @Last Modified time: 2019-08-14 15:45:53
+ * @Last Modified time: 2019-08-15 09:28:27
  */
 
 import React,{Component} from 'react'
@@ -34,11 +34,15 @@ class Registry extends Component{
     }
 
     registry = () => {
-        registry(this.state).then(res => {
-            console.log(res)
-        }) 
-    }
-    
+        if(this.state.username && this.state.password){
+            registry(this.state).then(res => {
+                if(res.data.code === 1){
+                    this.props.history.push('/login')
+                }
+                console.log(res)
+            }) 
+        }
+    }  
 }
 
 export default Registry
